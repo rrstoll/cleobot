@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useEffect, useRef } from 'react';
 
-const CHARACTER_OPTIONS = ["Cleopatra", "Sherlock Holmes", "Yoda", "Einstein"];
+const CHARACTER_OPTIONS = ["Cleopatra", "Julius Caesar", "Genghis Khan", "Napoleon", "Albert Einstein"];
 
 function MyComponent({ messages }) {
   const scrollRef = useRef();
@@ -44,44 +44,50 @@ export default function Home() {
   };
 
   return (
-    <div className="border-4 border-yellow-700 max-w-md w-full rounded-xl shadow-2xl p-8 backdrop-blur shadow-[inset_0_0_50px_#5c3e1a]">
-      <h1 className="text-3xl text-center font-bold text-gray-900 mb-4">Cleobot</h1>
-      <select
-        className="w-full border border-yellow-500 rounded-md p-2 mb-4 bg-yellow-50 text-yellow-900"
-        value={character}
-        onChange={(e) => setCharacter(e.target.value)}
-      >
-        {CHARACTER_OPTIONS.map((name) => (
-          <option key={name}>{name}</option>
-        ))}
-      </select>
-
-      <div className="border-yellow-500 rounded-md p-4 bg-yellow-50 text-yellow-900 h-64 overflow-y-auto mb-4">
-        {chatLog.map((entry, idx) => (
-          <div key={idx} className="mb-2">
-            <b>You:</b> {entry.user}<br />
-            <b>{entry.character}:</b> {entry.bot}
-          </div>
-        ))}
+    <>
+      <div>
+        <img src="/everchat_personas.png" className="max-w-md" />
       </div>
-
-      <input
-        className="w-full border border-yellow-500 rounded-md p-2 mb-2 bg-yellow-50 text-yellow-900"
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        placeholder="Ask a question..."
-      />
-
-      <div className="flex justify-center">
-        <button
-          className="bg-yellow-700 text-white font-bold px-6 py-2 rounded-md hover:bg-yellow-800 transition"
-          onClick={sendMessage}
+      <div className="border-4 border-yellow-700 max-w-md w-full rounded-xl shadow-2xl p-8 backdrop-blur">
+        <h1 className="text-3xl text-center font-bold text-gray-900 mb-4">Everbot</h1>
+        <h3 className="text-center text-gray-900 mb-4">Converse with minds that shaped the world.</h3>
+        <select
+          className="w-full border border-yellow-500 rounded-md p-2 mb-4 bg-yellow-50 text-yellow-900"
+          value={character}
+          onChange={(e) => setCharacter(e.target.value)}
         >
-          Send
-        </button>
-      </div>
+          {CHARACTER_OPTIONS.map((name) => (
+            <option key={name}>{name}</option>
+          ))}
+        </select>
 
-      <div className="mt-6 text-center text-xs text-gray-900 italic">May the Nile bless your submission.</div>
-    </div>
+        <div className="border-yellow-500 rounded-md p-4 bg-yellow-50 text-yellow-900 h-64 overflow-y-auto mb-4">
+          {chatLog.map((entry, idx) => (
+            <div key={idx} className="mb-2">
+              <b>You:</b> {entry.user}<br />
+              <b>{entry.character}:</b> {entry.bot}
+            </div>
+          ))}
+        </div>
+
+        <input
+          className="w-full border border-yellow-500 rounded-md p-2 mb-2 bg-yellow-50 text-yellow-900"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder="Ask a question..."
+        />
+
+        <div className="flex justify-center">
+          <button
+            className="bg-yellow-700 text-white font-bold px-6 py-2 rounded-md hover:bg-yellow-800 transition"
+            onClick={sendMessage}
+          >
+            Send
+          </button>
+        </div>
+
+        <div className="mt-6 text-center text-xs text-gray-900 italic">May you remember your history.</div>
+      </div>
+    </>
   );
 }
