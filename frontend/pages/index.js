@@ -3,6 +3,13 @@ import { useEffect, useRef } from 'react';
 
 const CHARACTER_OPTIONS = ["Cleopatra", "Julius Caesar", "Genghis Khan", "Napoleon", "Albert Einstein"];
 
+const handleSend = () => {
+  if (input.trim() !== "") {
+    console.log("Sending:", input);
+    setInput(""); // optionally clear input
+  }
+};
+
 function MyComponent({ messages }) {
   const scrollRef = useRef();
 
@@ -22,7 +29,7 @@ function MyComponent({ messages }) {
       ))}
     </div>
   );
-}
+};
 
 export default function Home() {
   const [character, setCharacter] = useState("Cleopatra");
@@ -74,6 +81,12 @@ export default function Home() {
           className="w-full border border-yellow-500 rounded-md p-2 mb-2 bg-yellow-50 text-yellow-900"
           value={input}
           onChange={(e) => setInput(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              e.preventDefault(); // prevent form submit if inside <form>
+              sendMessage();
+            }
+          }}
           placeholder="Ask a question..."
         />
 
