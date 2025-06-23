@@ -22,7 +22,7 @@ export default function Home() {
   };
 
   return (
-    <div className="p-6 max-w-xl mx-auto">
+    <div className="bg-white/90 border-4 border-yellow-700 max-w-md w-full rounded-xl shadow-2xl p-8 backdrop-blur">
       <h1 className="text-3xl text-center font-bold text-yellow-800 mb-4">Cleobot</h1>
       <select
         className="p-2 border mb-4"
