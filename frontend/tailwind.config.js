@@ -2,7 +2,7 @@ module.exports = {
   content: ["./pages/**/*.{js,ts,jsx,tsx}"],
   theme: {
     color: {
-      'myPapyrus': '#fdfde3'
+      'bgPapyrus': '#fdfde3'
     },
     extend: {
       backgroundImage: {
