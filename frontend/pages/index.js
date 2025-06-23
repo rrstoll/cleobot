@@ -46,7 +46,7 @@ export default function Home() {
   return (
     <>
       <div>
-        <img src="/everchat_personas.png" className="max-w-md" />
+        <img src="../everchat_personas.png" alt="Cleopatra, Genghis Khan and Napoleon" className="max-w-md" />
       </div>
       <div className="border-4 border-yellow-700 max-w-md w-full rounded-xl shadow-2xl p-8 backdrop-blur">
         <h1 className="text-3xl text-center font-bold text-gray-900 mb-4">Everbot</h1>
@@ -85,8 +85,6 @@ export default function Home() {
             Send
           </button>
         </div>
-
-        <div className="mt-6 text-center text-xs text-gray-900 italic">May you remember your history.</div>
       </div>
     </>
   );
