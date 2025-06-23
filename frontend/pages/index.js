@@ -44,7 +44,7 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-white/90 border-4 border-yellow-700 max-w-md w-full rounded-xl shadow-2xl p-8 backdrop-blur">
+    <div className="border-4 border-yellow-700 max-w-md w-full rounded-xl shadow-2xl p-8 backdrop-blur shadow-[inset_0_0_50px_#5c3e1a]">
       <h1 className="text-3xl text-center font-bold text-yellow-800 mb-4">Cleobot</h1>
       <select
         className="w-full border border-yellow-500 rounded-md p-2 bg-yellow-50 text-yellow-900"
