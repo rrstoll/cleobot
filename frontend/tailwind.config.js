@@ -1,7 +1,7 @@
 module.exports = {
   content: ["./pages/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    color: {
+    colors: {
       'colorPapyrus': '#fdfde3'
     },
     extend: {
