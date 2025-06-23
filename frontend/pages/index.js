@@ -45,9 +45,9 @@ export default function Home() {
 
   return (
     <div className="border-4 border-yellow-700 max-w-md w-full rounded-xl shadow-2xl p-8 backdrop-blur shadow-[inset_0_0_50px_#5c3e1a]">
-      <h1 className="text-3xl text-center font-bold text-yellow-800 mb-4">Cleobot</h1>
+      <h1 className="text-3xl text-center font-bold text-gray-900 mb-4">Cleobot</h1>
       <select
-        className="w-full border border-yellow-500 rounded-md p-2 bg-yellow-50 text-yellow-900"
+        className="w-full border border-gray-900 rounded-md p-2 bg-yellow-50 text-yellow-900"
         value={character}
         onChange={(e) => setCharacter(e.target.value)}
       >
@@ -56,7 +56,7 @@ export default function Home() {
         ))}
       </select>
 
-      <div className="border-yellow-500 rounded-md p-4 bg-yellow-50 text-yellow-900 h-64 overflow-y-auto mb-4">
+      <div className="border-gray-900 rounded-md p-4 bg-yellow-50 text-yellow-900 h-64 overflow-y-auto mb-4">
         {chatLog.map((entry, idx) => (
           <div key={idx} className="mb-2">
             <b>You:</b> {entry.user}<br />
@@ -78,7 +78,7 @@ export default function Home() {
         Send
       </button>
 
-      <div className="mt-6 text-center text-xs text-yellow-600 italic">May the Nile bless your submission.</div>
+      <div className="mt-6 text-center text-xs text-gray-900 italic">May the Nile bless your submission.</div>
     </div>
   );
 }
