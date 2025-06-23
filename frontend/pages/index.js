@@ -46,7 +46,7 @@ export default function Home() {
   return (
     <>
       <div>
-        <img src="/everchat_personas.png" alt="Cleopatra, Genghis Khan and Napoleon" className="max-w-sm" />
+        <img src="/everchat_personas.png" alt="Cleopatra, Genghis Khan and Napoleon" className="max-w-sm -mb-1" />
       </div>
       <div className="border-4 border-yellow-700 max-w-md w-full rounded-xl shadow-2xl p-8 backdrop-blur">
         <h1 className="text-3xl text-center font-bold text-gray-900 mb-4">Everbot</h1>
@@ -61,7 +61,7 @@ export default function Home() {
           ))}
         </select>
 
-        <div className="border-yellow-500 rounded-md p-4 bg-yellow-50 text-yellow-900 h-64 overflow-y-auto mb-4">
+        <div className="border-yellow-500 rounded-md p-4 bg-yellow-50 text-yellow-900 h-48 overflow-y-auto mb-4">
           {chatLog.map((entry, idx) => (
             <div key={idx} className="mb-2">
               <b>You:</b> {entry.user}<br />
