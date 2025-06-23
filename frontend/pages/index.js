@@ -1,6 +1,28 @@
 import { useState } from "react";
+import { useEffect, useRef } from 'react';
 
 const CHARACTER_OPTIONS = ["Sherlock Holmes", "Cleopatra", "Yoda", "Einstein"];
+
+function MyComponent({ messages }) {
+  const scrollRef = useRef();
+
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+    }
+  }, [messages]); // scrolls to bottom when messages change
+
+  return (
+    <div
+      ref={scrollRef}
+      className="overflow-y-auto max-h-96 p-4"
+    >
+      {messages.map((msg, idx) => (
+        <p key={idx}>{msg}</p>
+      ))}
+    </div>
+  );
+}
 
 export default function Home() {
   const [character, setCharacter] = useState("Sherlock Holmes");
@@ -17,7 +39,7 @@ export default function Home() {
     });
 
     const data = await res.json();
-    setChatLog([...chatLog, { character,user: input, bot: data.response }]);
+    setChatLog([...chatLog, { character, user: input, bot: data.response }]);
     setInput("");
   };
 
