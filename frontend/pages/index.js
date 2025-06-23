@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useEffect, useRef } from 'react';
 
-const CHARACTER_OPTIONS = ["Sherlock Holmes", "Cleopatra", "Yoda", "Einstein"];
+const CHARACTER_OPTIONS = ["Cleopatra", "Sherlock Holmes", "Yoda", "Einstein"];
 
 function MyComponent({ messages }) {
   const scrollRef = useRef();
@@ -25,7 +25,7 @@ function MyComponent({ messages }) {
 }
 
 export default function Home() {
-  const [character, setCharacter] = useState("Sherlock Holmes");
+  const [character, setCharacter] = useState("Cleopatra");
   const [chatLog, setChatLog] = useState([]);
   const [input, setInput] = useState("");
 
@@ -71,12 +71,15 @@ export default function Home() {
         onChange={(e) => setInput(e.target.value)}
         placeholder="Ask a question..."
       />
-      <button
-        className="mx-auto bg-yellow-700 text-white font-bold py-2 rounded-md hover:bg-yellow-800 transition"
-        onClick={sendMessage}
-      >
-        Send
-      </button>
+
+      <div className="flex justify-center">
+        <button
+          className="bg-yellow-700 text-white font-bold py-2 rounded-md hover:bg-yellow-800 transition"
+          onClick={sendMessage}
+        >
+          Send
+        </button>
+      </div>
 
       <div className="mt-6 text-center text-xs text-gray-900 italic">May the Nile bless your submission.</div>
     </div>
