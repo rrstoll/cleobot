@@ -1,6 +1,6 @@
-# Cleobot
+# Everbot
 
-This is a full-stack AI chatbot app where users can chat with fictional or historical characters. The app uses:
+This is a full-stack AI chatbot app where users can chat with historical characters. The app uses:
 
 - **Frontend:** Next.js + Tailwind CSS (deployed on [Vercel](https://vercel.com))
 - **Backend:** Flask + LangChain (deployed on [Render](https://render.com))
@@ -9,7 +9,7 @@ This is a full-stack AI chatbot app where users can chat with fictional or histo
 
 ## ✨ Features
 
-- Select from characters like Sherlock Holmes, Cleopatra, Yoda, or Einstein
+- Select from characters like Cleopatra, Genghis Khan, and Napoleon
 - Chat interface styled with Tailwind
 - Backend uses OpenAI (via LangChain) to simulate responses in-character
 
