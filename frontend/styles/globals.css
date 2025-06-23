@@ -4,6 +4,6 @@
 
 @layer base {
     body {
-        @apply bg-bgPapyrus bg-colorPapyrus bg-repeat min-h-screen flex items-center justify-center p-6
+        @apply bg-bgPapyrus bg-colorPapyrus bg-repeat min-h-screen flex items-center justify-center p-6 text-colorPapyrus font-papyrus;
     }
 }
