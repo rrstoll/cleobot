@@ -74,7 +74,7 @@ export default function Home() {
 
       <div className="flex justify-center">
         <button
-          className="bg-yellow-700 text-white font-bold py-2 rounded-md hover:bg-yellow-800 transition"
+          className="bg-yellow-700 text-white font-bold px-6 py-2 rounded-md hover:bg-yellow-800 transition"
           onClick={sendMessage}
         >
           Send
