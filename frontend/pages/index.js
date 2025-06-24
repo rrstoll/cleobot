@@ -60,24 +60,31 @@ export default function Home() {
           <h1 className="text-4xl text-center tracking-wider font-bold text-white mb-4">HistorySpeaks</h1>
           <h2 className="text-center italic text-white mb-4">Converse with minds that shaped the world.</h2>
         </div>
+        <div className="relative w-full mb-4">
         <select
-          className="w-full border border-gray-300 bg-white p-2 mb-4 text-black"
+          className="appearance-none w-full border border-gray-300 bg-white p-2 pr-10 text-black rounded"
           value={character}
           onChange={(e) => setCharacter(e.target.value)}
         >
-          {CHARACTER_OPTIONS.map((name) => (
-            <option key={name}>{name}</option>
-          ))}
+          <option>Cleopatra</option>
+          <option>Genghis Khan</option>
+          <option>Napoleon</option>
+          <option>Einstein</option>
         </select>
-
-        <div className="border-gray-300 bg-white p-4 text-yellow-900 h-48 overflow-y-auto mb-4">
+        <div className="pointer-events-none absolute inset-y-0 right-2 flex items-center text-gray-500">
+          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M7 7l3 3 3-3" />
+          </svg>
+        </div>
+      </div>
+      <div className="border-gray-300 bg-white p-4 text-black h-48 overflow-y-auto mb-4">
           {chatLog.map((entry, idx) => (
             <div key={idx} className="mb-2">
               <b>You:</b> {entry.user}<br />
               <b>{entry.character}:</b> {entry.bot}
             </div>
           ))}
-        </div>
+      </div>
 
         <input
           className="w-full border bg-white border-gray-300 p-2 mb-4 text-black"
