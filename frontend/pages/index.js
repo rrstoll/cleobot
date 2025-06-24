@@ -70,7 +70,7 @@ export default function Home() {
         </div>
 
         <input
-          className="w-full border bg-colorTan border-gray-300 p-2 mb-4 text-black"
+          className="w-full border bg-colorTan border-colorGreen border-2 p-2 mb-4 text-black"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => {
