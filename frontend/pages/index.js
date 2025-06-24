@@ -62,7 +62,7 @@ export default function Home() {
         </div>
         <div className="relative w-full mb-4">
         <select
-          className="appearance-none w-full border border-gray-300 bg-white p-2 mb-4 text-black"
+          className="appearance-none w-full border border-gray-300 bg-white p-2 pr-14 text-black"
           value={character}
           onChange={(e) => setCharacter(e.target.value)}
         >
@@ -70,9 +70,9 @@ export default function Home() {
             <option key={name}>{name}</option>
           ))}
         </select>
-        <div className="pointer-events-none absolute inset-y-0 right-2 flex items-center text-gray-500">
+        <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center text-gray-500">
           <svg
-            className="w-6 h-6"
+            className="w-7 h-7"
             fill="currentColor"
             viewBox="0 0 20 20"
           >
