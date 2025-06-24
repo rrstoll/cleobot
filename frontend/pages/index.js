@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useEffect, useRef } from 'react';
 
-const CHARACTER_OPTIONS = ["Cleopatra", "Julius Caesar", "Genghis Khan", "Napoleon", "Albert Einstein"];
+const CHARACTER_OPTIONS = ["Siddhartha Gautama (The Buddha)", "Julius Caesar", "Cleopatra VII", "Leonardo da Vinci", "Sojourner Truth", "Sitting Bull", "Albert Einstein", "Frida Kahlo"];
 
 const handleSend = () => {
   if (input.trim() !== "") {
@@ -56,7 +56,7 @@ export default function Home() {
         <img src="/everchat_personas.png" alt="Cleopatra, Genghis Khan and Napoleon" className="max-w-sm mx-auto -mb-1" />
       </div>
       <div className="bg-bg-colorPapyrus border-4 border-yellow-700 md:min-w-[600px] lg:min-w-[768px] max-w-3xl w-full rounded-xl shadow-2xl mx-2 p-8 backdrop-blur">
-        <h1 className="text-3xl text-center font-bold text-gray-900 mb-4">Everbot</h1>
+        <h1 className="text-3xl text-center font-bold text-gray-900 mb-4">HistorySpeaks</h1>
         <h3 className="text-center text-gray-900 mb-4">Converse with minds that shaped the world.</h3>
         <select
           className="w-full border border-yellow-500 rounded-md p-2 mb-4 bg-yellow-50 text-yellow-900"
