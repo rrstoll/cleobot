@@ -34,14 +34,14 @@ export default function Home() {
       <div>
         <img src="/everchat_personas.png" alt="Cleopatra, Genghis Khan and Napoleon" className="max-w-sm mx-auto -mb-1" />
       </div>
-      <div className="border-4 bg-colorPapyrus border-white md:min-w-[600px] lg:min-w-[768px] max-w-3xl w-full shadow-2xl mx-2 p-8 backdrop-blur">
-        <div className="bg-colorPapyrus mb-2">
+      <div className="border-4 bg-colorDkGreen border-white md:min-w-[600px] lg:min-w-[768px] max-w-3xl w-full shadow-2xl mx-2 p-8 backdrop-blur">
+        <div className="mb-2">
           <h1 className="text-4xl text-center tracking-widest font-playfair text-white mb-4">History<span className="font-normal">Speaks</span></h1>
-          <h2 className="text-center italic text-white mb-4">Converse with minds that shaped the world.</h2>
+          <h2 className="text-center italic text-colorDkGreen mb-4">Converse with minds that shaped the world.</h2>
         </div>
         <div className="relative w-full mb-4">
         <select
-          className="peer appearance-none w-full border border-gray-300 bg-colorLightTan p-2 pr-14 text-black transition duration-200 ease-in-out focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500"
+          className="peer appearance-none w-full border border-gray-300 bg-colorTan p-2 pr-14 text-black transition duration-200 ease-in-out focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500"
           value={character}
           onChange={(e) => setCharacter(e.target.value)}
         >
@@ -49,7 +49,7 @@ export default function Home() {
             <option key={name} value={name}>{name}</option>
           ))}
         </select>
-        <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center text-gray-500">
+        <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center text-colorDkGreen">
           <svg
             className="peer-focus:rotate-180 w-7 h-7"
             fill="currentColor"
@@ -60,7 +60,7 @@ export default function Home() {
         </div>
       </div>
 
-        <div ref={scrollRef} className="border-gray-300 bg-colorLightTan p-4 text-black h-48 overflow-y-auto mb-4">
+        <div ref={scrollRef} className="border-gray-300 bg-colorTan p-4 text-colorBlack h-48 overflow-y-auto mb-4">
           {chatLog.map((entry, idx) => (
             <div key={idx} className="mb-2">
               <b>You:</b> {entry.user}<br />
@@ -70,7 +70,7 @@ export default function Home() {
         </div>
 
         <input
-          className="w-full border bg-colorLightTan border-gray-300 p-2 mb-4 text-black"
+          className="w-full border bg-colorTan border-gray-300 p-2 mb-4 text-black"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => {
@@ -84,7 +84,7 @@ export default function Home() {
 
         <div className="flex justify-center">
           <button
-            className="bg-blue-700 text-white uppercase font-bold px-10 py-3 rounded-sm hover:bg-yellow-800 transition"
+            className="bg-colorLtGreen text-colorDkGreen uppercase font-bold px-10 py-3 rounded-sm hover:bg-yellow-800 transition"
             onClick={sendMessage}
           >
             Send
