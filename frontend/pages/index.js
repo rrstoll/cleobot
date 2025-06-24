@@ -35,8 +35,8 @@ export default function Home() {
         <img src="/everchat_personas.png" alt="Cleopatra, Genghis Khan and Napoleon" className="max-w-sm mx-auto -mb-1" />
       </div>
       <div className="border-4 bg-colorLtGreen border-white md:min-w-[600px] lg:min-w-[768px] max-w-3xl w-full shadow-2xl mx-2 p-8 backdrop-blur">
-        <div className="mb-2">
-          <h1 className="text-4xl text-center tracking-widest font-playfair font-bold text-colorDkGreen mb-4">History<span className=" text-colorGreen font-normal">Speaks</span></h1>
+        <div className="mb-3">
+          <h1 className="text-4xl text-center tracking-wide font-playfair font-bold text-colorDkGreen mb-4">History<span className=" text-colorGreen font-normal">Speaks</span></h1>
           <h2 className="text-md text-center italic text-white mb-4">Converse with minds that shaped the world.</h2>
         </div>
         <div className="relative w-full mb-4">
