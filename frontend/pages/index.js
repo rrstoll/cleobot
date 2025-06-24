@@ -41,7 +41,7 @@ export default function Home() {
         </div>
         <div className="relative w-full mb-4">
         <select
-          className="appearance-none w-full border border-gray-300 bg-colorLightTan p-2 pr-14 text-black transition duration-200 ease-in-out focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500"
+          className="peer appearance-none w-full border border-gray-300 bg-colorLightTan p-2 pr-14 text-black transition duration-200 ease-in-out focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500"
           value={character}
           onChange={(e) => setCharacter(e.target.value)}
         >
@@ -51,7 +51,7 @@ export default function Home() {
         </select>
         <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center text-gray-500">
           <svg
-            className="w-7 h-7"
+            className="peer-focus:rotate-180 w-7 h-7"
             fill="currentColor"
             viewBox="0 0 20 20"
           >
