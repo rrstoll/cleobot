@@ -1,4 +1,4 @@
-# Everbot
+# History Speaks
 
 This is a full-stack AI chatbot app where users can chat with historical characters. The app uses:
 
