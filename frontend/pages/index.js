@@ -41,7 +41,7 @@ export default function Home() {
         </div>
         <div className="relative w-full mb-4">
         <select
-          className="peer appearance-none w-full border border-gray-300 bg-colorTan p-2 pr-14 text-black transition duration-200 ease-in-out focus:ring-2 focus:ring-colorGreen focus:border-colorGreen"
+          className="peer appearance-none w-full border border-gray-300 bg-colorTan p-2 pr-14 text-black transition duration-200 ease-in-out focus:ring-1 focus:ring-colorGreen focus:border-colorGreen"
           value={character}
           onChange={(e) => setCharacter(e.target.value)}
         >
@@ -84,7 +84,7 @@ export default function Home() {
 
         <div className="flex justify-center">
           <button
-            className="bg-colorDkGreen text-colorTan uppercase font-bold px-10 py-3 rounded-sm hover:bg-yellow-800 transition"
+            className="bg-colorDkGreen text-white uppercase font-bold px-10 py-3 rounded-sm hover:bg-colorGreen transition"
             onClick={sendMessage}
           >
             Send
