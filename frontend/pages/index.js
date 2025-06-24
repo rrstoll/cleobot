@@ -62,29 +62,33 @@ export default function Home() {
         </div>
         <div className="relative w-full mb-4">
         <select
-          className="appearance-none w-full border border-gray-300 bg-white p-2 pr-10 text-black rounded"
+          className="w-full border border-gray-300 bg-white p-2 mb-4 text-black"
           value={character}
           onChange={(e) => setCharacter(e.target.value)}
         >
-          <option>Cleopatra</option>
-          <option>Genghis Khan</option>
-          <option>Napoleon</option>
-          <option>Einstein</option>
+          {CHARACTER_OPTIONS.map((name) => (
+            <option key={name}>{name}</option>
+          ))}
         </select>
         <div className="pointer-events-none absolute inset-y-0 right-2 flex items-center text-gray-500">
-          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+          <svg
+            className="w-6 h-6"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
             <path d="M7 7l3 3 3-3" />
           </svg>
         </div>
       </div>
-      <div className="border-gray-300 bg-white p-4 text-black h-48 overflow-y-auto mb-4">
+
+        <div className="border-gray-300 bg-white p-4 text-black h-48 overflow-y-auto mb-4">
           {chatLog.map((entry, idx) => (
             <div key={idx} className="mb-2">
               <b>You:</b> {entry.user}<br />
               <b>{entry.character}:</b> {entry.bot}
             </div>
           ))}
-      </div>
+        </div>
 
         <input
           className="w-full border bg-white border-gray-300 p-2 mb-4 text-black"
