@@ -55,9 +55,9 @@ export default function Home() {
       <div>
         <img src="/everchat_personas.png" alt="Cleopatra, Genghis Khan and Napoleon" className="max-w-sm mx-auto -mb-1" />
       </div>
-      <div className="border-4 bg-gray-600 border-white md:min-w-[600px] lg:min-w-[768px] max-w-3xl w-full shadow-2xl mx-2 p-8 backdrop-blur">
+      <div className="border-5 bg-gray-600 border-white md:min-w-[600px] lg:min-w-[768px] max-w-3xl w-full shadow-2xl mx-2 p-8 backdrop-blur">
         <div className="bg-gray-600 mb-2">
-          <h1 className="text-4xl text-center tracking-wider font-bold text-white mb-4">HistorySpeaks</h1>
+          <h1 className="text-4xl text-center tracking-wider font-bold text-white mb-4">History<span className="font-medium">Speaks</span></h1>
           <h2 className="text-center italic text-white mb-4">Converse with minds that shaped the world.</h2>
         </div>
         <div className="relative w-full mb-4">
@@ -105,7 +105,7 @@ export default function Home() {
 
         <div className="flex justify-center">
           <button
-            className="bg-blue-300 text-white uppercase font-bold px-10 py-2 rounded-sm hover:bg-yellow-800 transition"
+            className="bg-blue-700 text-white uppercase font-bold px-10 py-3 rounded-sm hover:bg-yellow-800 transition"
             onClick={sendMessage}
           >
             Send
