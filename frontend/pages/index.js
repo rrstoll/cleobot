@@ -3,38 +3,17 @@ import { useEffect, useRef } from 'react';
 
 const CHARACTER_OPTIONS = ["Siddhartha Gautama (The Buddha)", "Julius Caesar", "Cleopatra VII", "Genghis Khan", "Leonardo da Vinci", "Napoleon", "Sojourner Truth", "Sitting Bull", "Albert Einstein", "Frida Kahlo"];
 
-const handleSend = () => {
-  if (input.trim() !== "") {
-    console.log("Sending:", input);
-    setInput(""); // optionally clear input
-  }
-};
-
-function MyComponent({ messages }) {
+export default function Home() {
+  const [character, setCharacter] = useState(CHARACTER_OPTIONS[0]);
+  const [chatLog, setChatLog] = useState([]);
+  const [input, setInput] = useState("");
   const scrollRef = useRef();
 
   useEffect(() => {
     if (scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
-  }, [messages]); // scrolls to bottom when messages change
-
-  return (
-    <div
-      ref={scrollRef}
-      className="overflow-y-auto max-h-96 p-4"
-    >
-      {messages.map((msg, idx) => (
-        <p key={idx}>{msg}</p>
-      ))}
-    </div>
-  );
-};
-
-export default function Home() {
-  const [character, setCharacter] = useState("Cleopatra");
-  const [chatLog, setChatLog] = useState([]);
-  const [input, setInput] = useState("");
+  }, [chatLog]);
 
   const sendMessage = async () => {
     if (!input.trim()) return;
@@ -57,17 +36,17 @@ export default function Home() {
       </div>
       <div className="border-4 bg-colorPapyrus border-white md:min-w-[600px] lg:min-w-[768px] max-w-3xl w-full shadow-2xl mx-2 p-8 backdrop-blur">
         <div className="bg-colorPapyrus mb-2">
-          <h1 className="text-4xl text-center tracking-widest font-bold text-white mb-4">History<span className="font-normal">Speaks</span></h1>
+          <h1 className="text-4xl text-center tracking-widest font-playfair text-white mb-4">History<span className="font-normal">Speaks</span></h1>
           <h2 className="text-center italic text-white mb-4">Converse with minds that shaped the world.</h2>
         </div>
         <div className="relative w-full mb-4">
         <select
-          className="appearance-none w-full border border-gray-300 bg-colorLightTan p-2 pr-14 text-black"
+          className="appearance-none w-full border border-gray-300 bg-colorLightTan p-2 pr-14 text-black transition duration-200 ease-in-out focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500"
           value={character}
           onChange={(e) => setCharacter(e.target.value)}
         >
           {CHARACTER_OPTIONS.map((name) => (
-            <option key={name}>{name}</option>
+            <option key={name} value={name}>{name}</option>
           ))}
         </select>
         <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center text-gray-500">
@@ -81,7 +60,7 @@ export default function Home() {
         </div>
       </div>
 
-        <div className="border-gray-300 bg-colorLightTan p-4 text-black h-48 overflow-y-auto mb-4">
+        <div ref={scrollRef} className="border-gray-300 bg-colorLightTan p-4 text-black h-48 overflow-y-auto mb-4">
           {chatLog.map((entry, idx) => (
             <div key={idx} className="mb-2">
               <b>You:</b> {entry.user}<br />
