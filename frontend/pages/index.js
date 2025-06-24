@@ -34,14 +34,14 @@ export default function Home() {
       <div>
         <img src="/everchat_personas.png" alt="Cleopatra, Genghis Khan and Napoleon" className="max-w-sm mx-auto -mb-1" />
       </div>
-      <div className="border-4 bg-colorBlue border-white md:min-w-[600px] lg:min-w-[768px] max-w-3xl w-full shadow-2xl mx-2 p-8 backdrop-blur">
+      <div className="border-4 bg-colorLtGreen border-white md:min-w-[600px] lg:min-w-[768px] max-w-3xl w-full shadow-2xl mx-2 p-8 backdrop-blur">
         <div className="mb-2">
-          <h1 className="text-4xl text-center tracking-widest font-playfair font-bold text-white mb-4">History<span className="font-normal">Speaks</span></h1>
-          <h2 className="text-center italic text-colorDkGreen mb-4">Converse with minds that shaped the world.</h2>
+          <h1 className="text-4xl text-center tracking-widest font-playfair font-bold text-colorDkGreen mb-4">History<span className=" text-colorGreen font-normal">Speaks</span></h1>
+          <h2 className="text-center italic text-white mb-4">Converse with minds that shaped the world.</h2>
         </div>
         <div className="relative w-full mb-4">
         <select
-          className="peer appearance-none w-full border border-gray-300 bg-colorTan p-2 pr-14 text-black transition duration-200 ease-in-out focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500"
+          className="peer appearance-none w-full border border-gray-300 bg-colorTan p-2 pr-14 text-black transition duration-200 ease-in-out focus:ring-2 focus:ring-colorGreen focus:border-colorGreen"
           value={character}
           onChange={(e) => setCharacter(e.target.value)}
         >
@@ -84,7 +84,7 @@ export default function Home() {
 
         <div className="flex justify-center">
           <button
-            className="bg-colorLtGreen text-colorDkGreen uppercase font-bold px-10 py-3 rounded-sm hover:bg-yellow-800 transition"
+            className="bg-colorDkGreen text-colorTan uppercase font-bold px-10 py-3 rounded-sm hover:bg-yellow-800 transition"
             onClick={sendMessage}
           >
             Send
