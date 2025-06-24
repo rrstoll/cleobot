@@ -55,14 +55,14 @@ export default function Home() {
       <div>
         <img src="/everchat_personas.png" alt="Cleopatra, Genghis Khan and Napoleon" className="max-w-sm mx-auto -mb-1" />
       </div>
-      <div className="border-4 bg-yellow-300 border-white md:min-w-[600px] lg:min-w-[768px] max-w-3xl w-full shadow-2xl mx-2 p-8 backdrop-blur">
-        <div className="bg-yellow-300 mb-2">
+      <div className="border-4 bg-colorPapyrus border-white md:min-w-[600px] lg:min-w-[768px] max-w-3xl w-full shadow-2xl mx-2 p-8 backdrop-blur">
+        <div className="bg-colorPapyrus mb-2">
           <h1 className="text-4xl text-center tracking-widest font-bold text-white mb-4">History<span className="font-normal">Speaks</span></h1>
           <h2 className="text-center italic text-white mb-4">Converse with minds that shaped the world.</h2>
         </div>
         <div className="relative w-full mb-4">
         <select
-          className="appearance-none w-full border border-gray-300 bg-white p-2 pr-14 text-black"
+          className="appearance-none w-full border border-gray-300 bg-colorLightTan p-2 pr-14 text-black"
           value={character}
           onChange={(e) => setCharacter(e.target.value)}
         >
@@ -81,7 +81,7 @@ export default function Home() {
         </div>
       </div>
 
-        <div className="border-gray-300 bg-white p-4 text-black h-48 overflow-y-auto mb-4">
+        <div className="border-gray-300 bg-colorLightTan p-4 text-black h-48 overflow-y-auto mb-4">
           {chatLog.map((entry, idx) => (
             <div key={idx} className="mb-2">
               <b>You:</b> {entry.user}<br />
@@ -91,7 +91,7 @@ export default function Home() {
         </div>
 
         <input
-          className="w-full border bg-white border-gray-300 p-2 mb-4 text-black"
+          className="w-full border bg-colorLightTan border-gray-300 p-2 mb-4 text-black"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => {
