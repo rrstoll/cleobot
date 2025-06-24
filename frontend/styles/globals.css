@@ -4,6 +4,6 @@
 
 @layer base {
     body {
-        @apply min-h-screen flex items-center justify-center p-6 font-serif;
+        @apply min-h-screen flex items-center justify-center p-6 font-playfair;
     }
 }
