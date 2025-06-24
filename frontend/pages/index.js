@@ -62,7 +62,7 @@ export default function Home() {
         </div>
         <div className="relative w-full mb-4">
         <select
-          className="w-full border border-gray-300 bg-white p-2 mb-4 text-black"
+          className="appearance-none w-full border border-gray-300 bg-white p-2 mb-4 text-black"
           value={character}
           onChange={(e) => setCharacter(e.target.value)}
         >
