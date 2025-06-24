@@ -36,8 +36,8 @@ export default function Home() {
       </div>
       <div className="border-4 bg-colorLtGreen border-white md:min-w-[600px] lg:min-w-[768px] max-w-3xl w-full shadow-2xl mx-2 p-8 backdrop-blur">
         <div className="mb-2">
-          <h1 className="text-4xl text-center tracking-widest font-playfair font-bold text-colorDkGreen mb-4">History<span className=" text-colorGreen font-normal">Speaks</span></h1>
-          <h2 className="text-center italic text-white mb-4">Converse with minds that shaped the world.</h2>
+          <h1 className="text-5xl text-center tracking-widest font-playfair font-bold text-colorDkGreen mb-4">History<span className=" text-colorGreen font-normal">Speaks</span></h1>
+          <h2 className="text-xl text-center italic text-white mb-4">Converse with minds that shaped the world.</h2>
         </div>
         <div className="relative w-full mb-4">
         <select
