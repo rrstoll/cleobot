@@ -18,7 +18,7 @@ export default function Home() {
   const sendMessage = async () => {
     if (!input.trim()) return;
 
-    const res = await fetch("https://cleobot.onrender.com/api/chat", {
+    const res = await fetch("/api/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ character, message: input }),
