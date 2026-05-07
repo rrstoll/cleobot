@@ -45,14 +45,18 @@ export default function Home() {
         typeof data?.error === "string"
           ? data.error
           : data?.details
-            ? String(data.details).slice(0, 500)
+            ? String(data.details).slice(0, 800)
             : `HTTP ${res.status}`;
+      const hint =
+        typeof data?.openAIStatus === "number"
+          ? ` (upstream ${data.openAIStatus})`
+          : "";
       setChatLog([
         ...chatLog,
         {
           character,
           user: input,
-          bot: `[Error] ${detail}`,
+          bot: `[Error] ${detail}${hint}`,
         },
       ]);
       setInput("");

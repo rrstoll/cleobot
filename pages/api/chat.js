@@ -10,7 +10,7 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: "character and message are required" });
   }
 
-  const apiKey = process.env.OPENAI_API_KEY;
+  const apiKey = process.env.OPENAI_API_KEY?.trim();
   if (!apiKey) {
     return res.status(500).json({ error: "Missing OPENAI_API_KEY" });
   }
@@ -36,9 +36,25 @@ export default async function handler(req, res) {
 
     if (!openAIResponse.ok) {
       const errorBody = await openAIResponse.text();
-      return res.status(openAIResponse.status).json({
-        error: "OpenAI request failed",
-        details: errorBody,
+      let message = errorBody;
+      try {
+        const parsed = JSON.parse(errorBody);
+        const err = parsed?.error;
+        if (typeof err?.message === "string") {
+          message = err.message;
+          if (typeof err?.code === "string") {
+            message = `${message} (${err.code})`;
+          }
+        }
+      } catch {
+        message = errorBody.slice(0, 500);
+      }
+
+      const status =
+        openAIResponse.status >= 500 ? 502 : openAIResponse.status;
+      return res.status(status).json({
+        error: message,
+        openAIStatus: openAIResponse.status,
       });
     }
 
