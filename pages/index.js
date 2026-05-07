@@ -47,10 +47,13 @@ export default function Home() {
           : data?.details
             ? String(data.details).slice(0, 800)
             : `HTTP ${res.status}`;
-      const hint =
-        typeof data?.openAIStatus === "number"
-          ? ` (upstream ${data.openAIStatus})`
-          : "";
+      const upstream =
+        typeof data?.upstreamStatus === "number"
+          ? data.upstreamStatus
+          : typeof data?.openAIStatus === "number"
+            ? data.openAIStatus
+            : null;
+      const hint = upstream !== null ? ` (upstream ${upstream})` : "";
       setChatLog([
         ...chatLog,
         {
