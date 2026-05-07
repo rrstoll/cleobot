@@ -4,12 +4,12 @@ History Speaks is an AI chatbot where users can converse with historical figures
 
 ## Architecture
 
-- **Frontend:** Next.js + Tailwind CSS
-- **Backend API:** Next.js API route at `frontend/pages/api/chat.js`
+- **App:** Next.js + Tailwind CSS (UI and API in one repo)
+- **Backend API:** Next.js API route at `pages/api/chat.js`
 - **Hosting:** Single deployment on [Vercel](https://vercel.com)
 - **LLM Provider:** OpenAI Chat Completions API
 
-The frontend calls `POST /api/chat` (same app), so there is no required Render service.
+The UI calls `POST /api/chat` on the same deployment, so there is no separate backend host (for example Render).
 
 ## Features
 
@@ -21,27 +21,32 @@ The frontend calls `POST /api/chat` (same app), so there is no required Render s
 
 ```text
 cleobot/
-├── frontend/                 # Next.js app (UI + API route)
-│   └── pages/api/chat.js     # Server-side chat endpoint
-└── backend/                  # Legacy Flask backend (optional, not required)
+├── pages/
+│   ├── api/chat.js          # Server-side chat endpoint
+│   ├── index.js
+│   └── _app.js
+├── public/
+├── styles/
+├── package.json             # Next.js app (repo root)
+├── vercel.json
+└── backend/                 # Legacy Flask backend (optional, not required)
 ```
 
 ## Local Development
 
-1. Install dependencies:
+1. Install dependencies (from the repository root):
 
 ```bash
-cd frontend
 npm install
 ```
 
-2. Create environment variables (for local dev):
+2. Environment variables for local dev:
 
 ```bash
 cp .env.local.example .env.local
 ```
 
-If you do not have `.env.local.example`, create `.env.local` manually:
+Edit `.env.local` and set:
 
 ```bash
 OPENAI_API_KEY=your-openai-key
@@ -49,7 +54,7 @@ OPENAI_API_KEY=your-openai-key
 # OPENAI_MODEL=gpt-4o-mini
 ```
 
-3. Start dev server:
+3. Start the dev server:
 
 ```bash
 npm run dev
@@ -60,21 +65,27 @@ npm run dev
 ## Deployment (Vercel)
 
 1. Push this repo to GitHub.
-2. Import project into Vercel.
-3. Add environment variable in Vercel:
+2. Import the repository into Vercel and leave **Root Directory** empty (default), so Vercel uses the Next.js app at the repo root.
+3. Under Project → Settings → Environment Variables, add:
    - `OPENAI_API_KEY` (required)
    - `OPENAI_MODEL` (optional)
-4. Deploy.
+4. Deploy. After changing env vars, trigger a **Redeploy** so the new values apply.
 
-No cross-origin configuration is needed because frontend and API are served from the same app.
+No cross-origin configuration is needed because the UI and API are served from the same app.
+
+### Troubleshooting (Vercel)
+
+- **Wrong Root Directory:** If you previously set Root Directory to `frontend`, clear it (empty) or set it to `.` now that the Next.js app lives at the repo root. Save and redeploy.
+- **Environment variables:** Enable `OPENAI_API_KEY` for **Production** (and **Preview** if you test preview URLs). Redeploy after changes.
+- **Chat errors:** Open DevTools → Network → `api/chat`. A `500` with `Missing OPENAI_API_KEY` means the key is missing for that environment.
 
 ## Removing Render (Cost Savings)
 
 If you previously hosted Flask on Render:
 
-1. Confirm production chat works via Vercel deployment.
-2. In Render dashboard, suspend or delete the old service (for example `cleobot.onrender.com`).
-3. Remove any DNS records pointing to Render if you created them.
+1. Confirm production chat works on Vercel.
+2. In the Render dashboard, suspend or delete the old service (for example `cleobot.onrender.com`).
+3. Remove any DNS records pointing at Render if you added them.
 
 ## Notes
 

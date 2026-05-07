@@ -24,7 +24,41 @@ export default function Home() {
       body: JSON.stringify({ character, message: input }),
     });
 
-    const data = await res.json();
+    let data;
+    try {
+      data = await res.json();
+    } catch {
+      setChatLog([
+        ...chatLog,
+        {
+          character,
+          user: input,
+          bot: `Something went wrong (HTTP ${res.status}). Check Vercel logs for /api/chat.`,
+        },
+      ]);
+      setInput("");
+      return;
+    }
+
+    if (!res.ok) {
+      const detail =
+        typeof data?.error === "string"
+          ? data.error
+          : data?.details
+            ? String(data.details).slice(0, 500)
+            : `HTTP ${res.status}`;
+      setChatLog([
+        ...chatLog,
+        {
+          character,
+          user: input,
+          bot: `[Error] ${detail}`,
+        },
+      ]);
+      setInput("");
+      return;
+    }
+
     setChatLog([...chatLog, { character, user: input, bot: data.response }]);
     setInput("");
   };
